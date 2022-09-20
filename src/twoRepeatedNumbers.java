@@ -8,7 +8,7 @@ public class twoRepeatedNumbers {
         int i=0;
         for(int j=0;j<n+2;j++){
             int k=Math.abs(arr[j]);
-            //System.out.println(k);
+            // when the array elements has already an element which is negative , this means that this element already occured and is repeated
             if(arr[k]<0){
                 a[i]=Math.abs(arr[j]);
                 i++;

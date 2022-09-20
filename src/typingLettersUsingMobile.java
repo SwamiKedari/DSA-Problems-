@@ -4,6 +4,9 @@ public class typingLettersUsingMobile {
     public static void main(String[] swami){
         Scanner s=new Scanner(System.in);
         String v=s.nextLine();
+        // the string will have characters which will be achieved when the following sequence of characters will be achieved from the a array
+
+
         String[] a={
                 "2","22","222",
                 "3","33","333",
