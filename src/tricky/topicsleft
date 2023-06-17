@@ -1,0 +1,14 @@
+graphs :
+hamiltonian path
+disjoint set union
+shortest distance questions
+
+dp:
+dp on trees
+dp on partitions
+
+
+trees:
+constructing the tree using the preorder and the inorder traversal
+iterative traversals of the tree
+path related problems in the trees
