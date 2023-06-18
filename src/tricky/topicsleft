@@ -12,3 +12,9 @@ trees:
 constructing the tree using the preorder and the inorder traversal
 iterative traversals of the tree
 path related problems in the trees
+
+other:
+cycle detection in the linkedlist
+finding the ncr and the pascal's triangle
+finding the maximum xor subset within the numbers
+lru cache implementation
