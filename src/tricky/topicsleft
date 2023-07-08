@@ -6,12 +6,12 @@ shortest distance questions
 dp:
 dp on trees
 dp on partitions
-
+palindrome partitioning can be done in o(n*n), explore the procedure
 
 trees:
 constructing the tree using the preorder and the inorder traversal
 iterative traversals of the tree
-path related problems in the trees
+path related problems in the trees (done)
 
 other:
 cycle detection in the linkedlist
