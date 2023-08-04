@@ -7,14 +7,17 @@ dp:
 dp on trees
 dp on partitions
 palindrome partitioning can be done in o(n*n), explore the procedure
+finding count of palindromic substrings (can be done greedily and also can be done using dp, explore it)
 
 trees:
 constructing the tree using the preorder and the inorder traversal
-iterative traversals of the tree
+iterative traversals of the tree (done)
 path related problems in the trees (done)
 
 other:
 cycle detection in the linkedlist
-finding the ncr and the pascal's triangle
+finding the ncr and the pascal's triangle (done)
 finding the maximum xor subset within the numbers
 lru cache implementation
+
+

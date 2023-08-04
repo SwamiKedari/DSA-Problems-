@@ -1,75 +1,64 @@
-import java.util.*;
-
-public class test {
+//{ Driver Code Starts
+class test
+{
 
     public static void main(String[] swami){
-        ArrayList<String> ans=removeInvalidParentheses("d(((p)((x(");
-        System.out.println(String.valueOf(ans));
+        Node a=new Node(0);
+        Node head=a;
+        for(int i=1;i<10;i++){
+            Node k=new Node(i);
+            a.next=k;
+            a=a.next;
+        }
+        Node rev=reverse(head,4);
+        while(rev!=null){
+            System.out.println(rev.data);
+            rev=rev.next;
+            //break;
+        }
     }
-
-    public static ArrayList<String> removeInvalidParentheses(String s) {
-        // code here
-        Stack<Character> st=new Stack<>();
-        int n=s.length();
-        for(int i=0;i<n;i++){
-            char ch=s.charAt(i);
-            if(ch=='('){
-                st.push(ch);
-            }
-            else if(ch==')' && !st.isEmpty() && st.peek()=='('){
-                st.pop();
-            }
-            else if(ch==')'){
-                st.push(ch);
-            }
+    public static Node reverse(Node node, int k)
+    {
+        //Your code here
+        Node first=node, sec=node;
+        int ct=0;
+        while(first!=null){
+            first=first.next;
+            ct++;
+        }
+        Node[] val=getrev(sec,null,k);
+        Node ans=val[0];
+        if(ct<k){
+            return val[0];
         }
 
-        int len=n-st.size(); // this will be the length of the maximum characters that present in the valid string balanced
-        System.out.println(len);
-        System.out.println(String.valueOf(st));
-        ArrayList<String> ans=new ArrayList<>();
-        HashSet<String> set=new HashSet<>();
-        addtolist(set,s,0,"",n,len);
-        for(String string: set){
-            ans.add(string) ;
+        for(int i=k;i<ct;i+=k){
+            Node cur=val[2];
+            System.out.println(val[0].data+" "+val[1].data+" "+val[2].data);
+            Node[] v1=getrev(cur,null,k);
+            System.out.println(v1[0].data+" "+v1[1].data+" ");
+            val[1].next=v1[0];
+            val[1]=v1[1];
+            val[2]=v1[2];
+
         }
 
-        Collections.sort(ans);
         return ans;
     }
 
-    public static void addtolist(HashSet<String> ar,String s,int i,String val,int n,int min){
-        if(i==n){
-            if(val.length()==min){
-                if(check(val)){
-                    ar.add(val);
-                }
-            }
-            return;
+    public static Node[] getrev(Node cur,Node pre,int k){
+        Node next=cur.next;
+        Node head=cur;
+        //System.out.println(cur);
+        for(int i=0;cur!=null && i<k;i++){
+            next=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=next;
         }
-
-        addtolist(ar,s,i+1,val+s.charAt(i),n,min);
-        addtolist(ar,s,i+1,val,n,min);
-    }
-
-    public static boolean check(String s){
-        Stack<Character> st=new Stack<>();
-        int n=s.length();
-        for(int i=0;i<n;i++){
-            if(s.charAt(i)=='('){
-                st.push(s.charAt(i));
-            }
-            else{
-                if(st.isEmpty()){
-                    return false;
-                }
-                st.pop();
-            }
-        }
-
-        if(st.isEmpty()){
-            return true;
-        }
-        return false;
+        //System.out.println(pre.data);
+        Node[] a={pre,head,cur};
+        return a;
     }
 }
+
